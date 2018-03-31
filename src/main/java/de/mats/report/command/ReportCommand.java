@@ -1,6 +1,6 @@
 package de.mats.report.command;
 
-import de.mats.report.MainClass;
+import de.mats.report.Report;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -27,15 +27,15 @@ public class ReportCommand extends Command {
 
         if (strings[0].equals("login")) {
             if (proxiedPlayer.hasPermission("report.login"))
-                MainClass.getInstance().getReportUtil().login(proxiedPlayer);
+                Report.getInstance().getReportUtil().login(proxiedPlayer);
             else {
-                MainClass.getInstance().getReportUtil().report(ProxyServer.getInstance().getPlayer(strings[0]));
+                Report.getInstance().getReportUtil().report(ProxyServer.getInstance().getPlayer(strings[0]));
                 proxiedPlayer.sendMessage(new TextComponent("[Report] Du hast " + strings[0] + " erfolgreich reportet"));
             }
             return;
         }
 
-        MainClass.getInstance().getReportUtil().report(ProxyServer.getInstance().getPlayer(strings[0]));
+        Report.getInstance().getReportUtil().report(ProxyServer.getInstance().getPlayer(strings[0]));
         proxiedPlayer.sendMessage(new TextComponent("[Report] Du hast " + strings[0] + " erfolgreich reportet"));
     }
 }

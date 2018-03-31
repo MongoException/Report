@@ -1,7 +1,7 @@
 name: Report
 version: 1.0
 author: Mats
-main: de.mats.report.MainClass
+main: de.mats.report.Report
 
 commands:
      report:

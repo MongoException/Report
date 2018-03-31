@@ -10,10 +10,10 @@ import net.md_5.bungee.api.plugin.Plugin;
  * Erstellt von Boss
  */
 @Getter
-public class MainClass extends Plugin {
+public class Report extends Plugin {
 
     @Getter
-    private static MainClass instance;
+    private static Report instance;
 
     private ReportUtil reportUtil;
 
