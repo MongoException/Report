@@ -26,7 +26,12 @@ public class ReportCommand extends Command {
             return;
 
         if (strings[0].equals("login")) {
-            MainClass.getInstance().getReportUtil().login(proxiedPlayer);
+            if (proxiedPlayer.hasPermission("report.login"))
+                MainClass.getInstance().getReportUtil().login(proxiedPlayer);
+            else {
+                MainClass.getInstance().getReportUtil().report(ProxyServer.getInstance().getPlayer(strings[0]));
+                proxiedPlayer.sendMessage(new TextComponent("[Report] Du hast " + strings[0] + " erfolgreich reportet"));
+            }
             return;
         }
 
